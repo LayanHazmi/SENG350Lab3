@@ -1,0 +1,15 @@
+<state>
+  <timestamp value='1793341753641' />
+  <sourceSet name='default'>
+    <source name='/home/gtamura/own/cursos/swarch/resources/ICE/callback-threadpool/Callback.ice'>
+      <file name='/home/gtamura/own/cursos/swarch/resources/ICE/callback-threadpool/server/build/generated-src/Demo/Callback.java' />
+      <file name='/home/gtamura/own/cursos/swarch/resources/ICE/callback-threadpool/server/build/generated-src/Demo/ChatManager.java' />
+      <file name='/home/gtamura/own/cursos/swarch/resources/ICE/callback-threadpool/server/build/generated-src/Demo/CallbackPrx.java' />
+      <file name='/home/gtamura/own/cursos/swarch/resources/ICE/callback-threadpool/server/build/generated-src/Demo/_CallbackPrxI.java' />
+      <file name='/home/gtamura/own/cursos/swarch/resources/ICE/callback-threadpool/server/build/generated-src/Demo/ChatManagerPrx.java' />
+      <file name='/home/gtamura/own/cursos/swarch/resources/ICE/callback-threadpool/server/build/generated-src/Demo/_ChatManagerPrxI.java' />
+    </source>
+    <arg value='/opt/Ice-3.7.9/bin/slice2java' />
+    <arg value='-I/opt/Ice-3.7.9/slice' />
+  </sourceSet>
+</state>
