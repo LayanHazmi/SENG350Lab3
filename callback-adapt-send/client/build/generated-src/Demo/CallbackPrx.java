@@ -17,36 +17,39 @@ package Demo;
 
 public interface CallbackPrx extends com.zeroc.Ice.ObjectPrx
 {
-    default void notifyCallback()
+    default void notifyCallback(String msg)
     {
-        notifyCallback(com.zeroc.Ice.ObjectPrx.noExplicitContext);
+        notifyCallback(msg, com.zeroc.Ice.ObjectPrx.noExplicitContext);
     }
 
-    default void notifyCallback(java.util.Map<String, String> context)
+    default void notifyCallback(String msg, java.util.Map<String, String> context)
     {
-        _iceI_notifyCallbackAsync(context, true).waitForResponse();
+        _iceI_notifyCallbackAsync(msg, context, true).waitForResponse();
     }
 
-    default java.util.concurrent.CompletableFuture<Void> notifyCallbackAsync()
+    default java.util.concurrent.CompletableFuture<Void> notifyCallbackAsync(String msg)
     {
-        return _iceI_notifyCallbackAsync(com.zeroc.Ice.ObjectPrx.noExplicitContext, false);
+        return _iceI_notifyCallbackAsync(msg, com.zeroc.Ice.ObjectPrx.noExplicitContext, false);
     }
 
-    default java.util.concurrent.CompletableFuture<Void> notifyCallbackAsync(java.util.Map<String, String> context)
+    default java.util.concurrent.CompletableFuture<Void> notifyCallbackAsync(String msg, java.util.Map<String, String> context)
     {
-        return _iceI_notifyCallbackAsync(context, false);
+        return _iceI_notifyCallbackAsync(msg, context, false);
     }
 
     /**
      * @hidden
+     * @param iceP_msg -
      * @param context -
      * @param sync -
      * @return -
      **/
-    default com.zeroc.IceInternal.OutgoingAsync<Void> _iceI_notifyCallbackAsync(java.util.Map<String, String> context, boolean sync)
+    default com.zeroc.IceInternal.OutgoingAsync<Void> _iceI_notifyCallbackAsync(String iceP_msg, java.util.Map<String, String> context, boolean sync)
     {
         com.zeroc.IceInternal.OutgoingAsync<Void> f = new com.zeroc.IceInternal.OutgoingAsync<>(this, "notifyCallback", null, sync, null);
-        f.invoke(false, context, null, null, null);
+        f.invoke(false, context, null, ostr -> {
+                     ostr.writeString(iceP_msg);
+                 }, null);
         return f;
     }
 

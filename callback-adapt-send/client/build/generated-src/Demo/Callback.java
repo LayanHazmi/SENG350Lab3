@@ -17,7 +17,7 @@ package Demo;
 
 public interface Callback extends com.zeroc.Ice.Object
 {
-    void notifyCallback(com.zeroc.Ice.Current current);
+    void notifyCallback(String msg, com.zeroc.Ice.Current current);
 
     /** @hidden */
     static final String[] _iceIds =
@@ -53,8 +53,11 @@ public interface Callback extends com.zeroc.Ice.Object
     static java.util.concurrent.CompletionStage<com.zeroc.Ice.OutputStream> _iceD_notifyCallback(Callback obj, final com.zeroc.IceInternal.Incoming inS, com.zeroc.Ice.Current current)
     {
         com.zeroc.Ice.Object._iceCheckMode(null, current.mode);
-        inS.readEmptyParams();
-        obj.notifyCallback(current);
+        com.zeroc.Ice.InputStream istr = inS.startReadParams();
+        String iceP_msg;
+        iceP_msg = istr.readString();
+        inS.endReadParams();
+        obj.notifyCallback(iceP_msg, current);
         return inS.setResult(inS.writeEmptyParams());
     }
 

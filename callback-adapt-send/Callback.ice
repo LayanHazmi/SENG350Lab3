@@ -1,17 +1,16 @@
 module Demo
 {
-    sequence<string> StringSeq;
+    sequence<byte> ByteSeq;
 
-    interface Callback{
-        void notifyCallback();
-    }
-    interface ChatManager{
-
-        void subscribe(Callback* callback);
-
-        StringSeq getState();
-
-        void sendMessage(string msg);
+    interface Callback
+    {
+        void notifyCallback(string msg);
     }
 
+    interface ImageManager
+    {
+        void subscribe(int busId, Callback* callback);
+
+        void sendImage(int busId, string tag, string timestamp, ByteSeq image);
+    }
 }

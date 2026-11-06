@@ -1,13 +1,13 @@
 <state>
-  <timestamp value='1793341753641' />
+  <timestamp value='1793929024992' />
   <sourceSet name='default'>
-    <source name='/home/gtamura/own/cursos/swarch/resources/ICE/callback-threadpool/Callback.ice'>
-      <file name='/home/gtamura/own/cursos/swarch/resources/ICE/callback-threadpool/server/build/generated-src/Demo/Callback.java' />
-      <file name='/home/gtamura/own/cursos/swarch/resources/ICE/callback-threadpool/server/build/generated-src/Demo/ChatManager.java' />
-      <file name='/home/gtamura/own/cursos/swarch/resources/ICE/callback-threadpool/server/build/generated-src/Demo/CallbackPrx.java' />
-      <file name='/home/gtamura/own/cursos/swarch/resources/ICE/callback-threadpool/server/build/generated-src/Demo/_CallbackPrxI.java' />
-      <file name='/home/gtamura/own/cursos/swarch/resources/ICE/callback-threadpool/server/build/generated-src/Demo/ChatManagerPrx.java' />
-      <file name='/home/gtamura/own/cursos/swarch/resources/ICE/callback-threadpool/server/build/generated-src/Demo/_ChatManagerPrxI.java' />
+    <source name='/home/muskans/SENG350/SENG350Lab3/callback-adapt-send/Callback.ice'>
+      <file name='/home/muskans/SENG350/SENG350Lab3/callback-adapt-send/server/build/generated-src/Demo/Callback.java' />
+      <file name='/home/muskans/SENG350/SENG350Lab3/callback-adapt-send/server/build/generated-src/Demo/ImageManager.java' />
+      <file name='/home/muskans/SENG350/SENG350Lab3/callback-adapt-send/server/build/generated-src/Demo/CallbackPrx.java' />
+      <file name='/home/muskans/SENG350/SENG350Lab3/callback-adapt-send/server/build/generated-src/Demo/_CallbackPrxI.java' />
+      <file name='/home/muskans/SENG350/SENG350Lab3/callback-adapt-send/server/build/generated-src/Demo/ImageManagerPrx.java' />
+      <file name='/home/muskans/SENG350/SENG350Lab3/callback-adapt-send/server/build/generated-src/Demo/_ImageManagerPrxI.java' />
     </source>
     <arg value='/opt/Ice-3.7.9/bin/slice2java' />
     <arg value='-I/opt/Ice-3.7.9/slice' />

@@ -1,12 +1,14 @@
+import com.zeroc.Ice.Communicator;
+import com.zeroc.Ice.ObjectAdapter;
+import com.zeroc.Ice.Util;
+
 public class Server {
     public static void main(String[] args) {
-        try (com.zeroc.Ice.Communicator communicator = com.zeroc.Ice.Util.initialize(args, "server.cfg")) {
-            String value = communicator.getProperties().getProperty("name");
-            com.zeroc.Ice.ObjectAdapter adapter = communicator.createObjectAdapter("Service");
-
-            ChatManagerImp chatManagerImp = new ChatManagerImp();
-            adapter.add(chatManagerImp, com.zeroc.Ice.Util.stringToIdentity("ChatManager"));
+        try (Communicator communicator = Util.initialize(args, "server.cfg")) {
+            ObjectAdapter adapter = communicator.createObjectAdapter("Service");
+            adapter.add(new ImageManagerImp(), Util.stringToIdentity("ImageManager"));
             adapter.activate();
+            System.out.println("Server ready");
             communicator.waitForShutdown();
         }
     }

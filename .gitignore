@@ -1,16 +1,8 @@
-# Compiled class file
+# ---- Java (from your original) ----
 *.class
-
-# Log file
 *.log
-
-# BlueJ files
 *.ctxt
-
-# Mobile Tools for Java (J2ME)
 .mtj.tmp/
-
-# Package Files #
 *.jar
 *.war
 *.nar
@@ -18,7 +10,36 @@
 *.zip
 *.tar.gz
 *.rar
-
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 replay_pid*
+
+# ---- Gradle / build output ----
+.gradle/
+build/
+bin/
+out/
+
+# ---- IDE ----
+.vscode/
+.idea/
+*.iml
+
+# ---- OS ----
+.DS_Store
+Thumbs.db
+
+# ---- Lab test images (about 1800 full-HD JPGs, too big for the repo) ----
+/1/
+/2/
+/3/
+/blue/
+/yellow/
+/green/
+*.jpg
+*.jpeg
+
+# ---- Server output (images stored by the server; change "team1" to your folder name) ----
+**/team1/
+
+# ---- Raw per-run CSVs written by the server ----
+**/throughput-*.csvcallback-adapt-send/run-experiment.sh

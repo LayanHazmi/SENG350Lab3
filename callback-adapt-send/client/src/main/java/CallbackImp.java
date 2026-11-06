@@ -1,23 +1,24 @@
-import java.util.Arrays;
+import java.util.concurrent.atomic.AtomicInteger;
 
 import com.zeroc.Ice.Current;
 
-import Demo.ChatManagerPrx;
-
 public class CallbackImp implements Demo.Callback {
 
-    private ChatManagerPrx server;
+    private static final boolean VERBOSE = false;   // set false during experiments
+    private final int busId;
+    private final AtomicInteger received = new AtomicInteger();
 
-    CallbackImp(ChatManagerPrx srvr) {
-        server = srvr;
+    CallbackImp(int busId) {
+        this.busId = busId;
     }
 
     @Override
-    public void notifyCallback(Current current) {
-        System.out.println("notified from Server");
-        String state[] = server.getState();
-
-        System.out.println("Callback executed: " + Arrays.toString(state));
+    public void notifyCallback(String msg, Current current) {
+        received.incrementAndGet();
+        if (VERBOSE) System.out.println("[bus " + busId + "] notified: " + msg);
     }
 
+    int getReceived() {
+        return received.get();
+    }
 }
