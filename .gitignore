@@ -44,3 +44,9 @@ Thumbs.db
 # ---- Raw per-run CSVs written by the server ----
 **/throughput-*.csvcallback-adapt-send/run-experiment.sh
 callback-adapt-send/run-experiment.sh
+
+# build output
+.gradle/
+build/
+bin/
+callback-adapt-send/run-experiment.sh
