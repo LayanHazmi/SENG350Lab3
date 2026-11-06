@@ -18,7 +18,7 @@ import Demo.CallbackPrx;
 
 public class ImageManagerImp implements Demo.ImageManager {
 
-    private static final String ROOT = "team1";   // change to your team name
+    private static final String ROOT = "team1";   
 
     private final Map<Integer, CallbackPrx> subscribers = new ConcurrentHashMap<>();
     private final AtomicLong sequence = new AtomicLong();
